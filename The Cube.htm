@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive 3D Cube</title>
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      perspective: 800px;
+    }
+
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      animation: rotate 10s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      }
+    }
+
+    .side {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 2px solid #fff;
+      opacity: 0.9;
+    }
+
+    .front {
+      background-color: #ff0000;
+      transform: translateZ(100px);
+    }
+
+    .back {
+      background-color: #00ff00;
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    .left {
+      background-color: #0000ff;
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .right {
+      background-color: #ffff00;
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .top {
+      background-color: #ff00ff;
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .bottom {
+      background-color: #00ffff;
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="side front"></div>
+    <div class="side back"></div>
+    <div class="side left"></div>
+    <div class="side right"></div>
+    <div class="side top"></div>
+    <div class="side bottom"></div>
+  </div>
+</body>
+</html>
